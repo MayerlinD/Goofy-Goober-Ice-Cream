@@ -1,52 +1,67 @@
-const { update } = require('../models/ggicecream')
-const GGIceCream = require('../models/ggicecream')
+const { update } = require('../models/goober')
+const Goober = require('../models/goober')
 
 const dataController = {
+    home(req, res, next){
+        Goober.find({}, (err, foundGoobers) => {
+            if(err){
+               res.status(400).send({
+                msg: err.message
+               }) 
+            } else {
+                res.locals.data.goobers = foundGoobers
+                next()
+            }
+        })
+    },
+    //Index,
     index(req, res, next){
-        GGIceCream.find({}, (err, foundGGIceCreams) => {
+        Goober.find({}, (err, foundGoobers) => {
             if(err){
-                res.status(400).send({
-                    msg: err.message
-                })
+               res.status(400).send({
+                msg: err.message
+               }) 
             } else {
-                res.locals.data.ggicecreams = foundGGIceCreams
+                res.locals.data.goobers = foundGoobers
                 next()
             }
         })
     },
+    //Destroy
     destroy(req, res, next){
-        GGIceCream.findByIdAndDelete(req.params.id, (err, deletedGGIceCream) => {
+        Goober.findByIdAndDelete(req.params.id, (err, deletedGoober) => {
             if(err){
                 res.status(400).send({
                     msg: err.message
                 })
             } else {
-                res.locals.data.ggicecream = deletedGGIceCream
+                res.locals.data.goober = deletedGoober
                 next()
             }
         })
     },
+    //Update
     update(req, res, next){
-        GGIceCream.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedGGIceCream)=> {
+        Goober.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedGoober)=> {
             if(err){
                 res.status(400).send({
                     msg: err.message
                 })
             } else {
-                res.locals.data.ggicecream = updatedGGIceCream
+                res.locals.data.goober = updatedGoober
                 next()
             }
         })
     },
     //Create
     create(req, res, next){
-        GGIceCream.create(req.body, (err, createdGGIceCream)=> {
+        Goober.create(req.body, (err, createdGoober)=> {
             if(err){
                 res.status(400).send({
                     msg: err.message
                 })
             } else {
-                res.locals.data.ggicecream = createdGGIceCream
+                res.locals.data.goober = createdGoober
                 next()
             }
         })
@@ -54,14 +69,14 @@ const dataController = {
     //Edit
     //Show
     show(req, res, next){
-        GGIceCream.findById(req.params.id,(err, foundGGIceCream) => {
+        Goober.findById(req.params.id,(err, foundGoober) => {
             if(err){
                 res.status(404).send({
                     msg: err.message,
-                    output: 'Could not find an ice cream with that ID'
+                    output: 'Could not find a goober with that ID'
                 })
             } else {
-                res.locals.data.pokemon = foundGGIceCream
+                res.locals.data.goober = foundGoober
                 next()
             }
         })

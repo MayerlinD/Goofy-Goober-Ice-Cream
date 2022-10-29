@@ -8,8 +8,10 @@ const viewController = require('./viewController')
 
 
 // Routes
+//Home
+router.get('/', dataController.index, viewController.home)
 // Index
-router.get('/', dataController.index, viewController.index)
+router.get('/flavors', dataController.index, viewController.index)
 // New
 router.get('/new', viewController.newView )
 // Delete
@@ -21,6 +23,8 @@ router.post('/', dataController.create, viewController.redirectShow)
 // Edit
 router.get('/:id/edit', dataController.show, viewController.edit)
 // Show
+router.get('/:id', dataController.show, viewController.show)
+// Flavors
 router.get('/:id', dataController.show, viewController.show)
 
 
