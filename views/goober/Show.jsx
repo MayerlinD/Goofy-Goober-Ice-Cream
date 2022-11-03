@@ -4,11 +4,11 @@ const Default = require('../layouts/Default.jsx')
 class Show extends React.Component {
    
     render(){
-        const {flavor, description, image, _id} = this.props.goober
+        const {flavor, image, _id} = this.props.goober
         const capName = flavor[0].toUpperCase() + flavor.substring(1)
         return(
         <Default title={`${capName} Show Page`} goober={this.props.goober}>
-            <p>{capName} is {description}</p><br />
+            <p>{capName}</p><br />
             <img src={`${image}`}/>
         </Default>
         )

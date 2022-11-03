@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 // Make a Schema
 const gooberSchema = new mongoose.Schema({
     flavor:  { type: String, required: true },
-    description:  { type: String, required: true },
     image: {type: String}
 });
 

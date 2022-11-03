@@ -5,28 +5,29 @@ class Index extends React.Component{
     render(){
         const {goobers} = this.props
         return(
-            <Default title="Goober Index Page">
+            <Default title="Goofy Goober Ice Cream">
                 <nav>
                     {/* <a href="/goober/flavors">Browse Our Flavors</a> */}
                 </nav>
                 <ul>
                     {
                         goobers.map((goober) => {
-                            const {flavor, description, image} = goober
+                            const {flavor, image} = goober
                             return (
-                                <li key={goober._id}>
-                                    <a href={`/goober/${goober._id}`}>
-                                    {flavor}</a> is {description}
-                                    
-                                     <br/>
-        
-                                        <img src={`${image}`}></img>>
-                                    
-                                    <br/>
-                                    <form method="POST" action={`/goober/${goober._id}?_method=DELETE`}>
-                                        <input type="submit" value={`Delete ${description} ${flavor}`}/>
-                                    </form>
-                                </li>
+                                <div className='flex-parent card-container'>
+                                    <div className='ice-cream-card flex-items inner-flex-parent'>
+                                        <li className='card-name' key={goober._id}>
+                                            <a className='card-title' href={`/goober/${goober._id}`}>
+                                                {flavor}</a>
+
+                                            <br />
+
+                                            <img className='card-img' src={`${image}`}></img>
+
+                                            <br />
+                                        </li>
+                                    </div>
+                                </div>
                             )
                         })
                     }
