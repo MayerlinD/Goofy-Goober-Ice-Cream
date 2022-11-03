@@ -9,29 +9,24 @@ class Index extends React.Component{
                 <nav>
                     {/* <a href="/goober/flavors">Browse Our Flavors</a> */}
                 </nav>
-                <ul>
+                <div className='flex-parent card-container'>
                     {
                         goobers.map((goober) => {
                             const {flavor, image} = goober
                             return (
-                                <div className='flex-parent card-container'>
-                                    <div className='ice-cream-card flex-items inner-flex-parent'>
-                                        <li className='card-name' key={goober._id}>
-                                            <a className='card-title' href={`/goober/${goober._id}`}>
-                                                {flavor}</a>
+                                <div className='card' key={goober._id}>
+                                            <div><a className='card-title' href={`/goober/${goober._id}`}>
+                                                {flavor}</a></div>
 
-                                            <br />
 
-                                            <img className='card-img' src={`${image}`}></img>
-
-                                            <br />
-                                        </li>
+                                            <div><img className='card-img' src={`${image}`}></img></div>
+ 
                                     </div>
-                                </div>
+
                             )
                         })
                     }
-                </ul>
+                </div>
             </Default>
         )
     }
