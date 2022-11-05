@@ -19,6 +19,9 @@ A CRUD web app that let's you browse through the ice cream flavors of Bikini Bot
 
 ![](Screen%20Shot%202022-11-02%20at%2011.20.08%20PM.png)
 
+## Trello
+![](Screen%20Shot%202022-11-05%20at%2010.11.41%20AM.png)
+
 ## ERD
 ![](Screen%20Shot%202022-11-04%20at%2010.30.25%20PM.png)
 
