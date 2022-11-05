@@ -19,6 +19,9 @@ A CRUD web app that let's you browse through the ice cream flavors of Bikini Bot
 
 ![](Screen%20Shot%202022-11-02%20at%2011.20.08%20PM.png)
 
+## ERD
+![](Screen%20Shot%202022-11-04%20at%2010.30.25%20PM.png)
+
 ## Next Steps
 
 This is not the desired finished product. In the future, I would:
@@ -26,6 +29,7 @@ This is not the desired finished product. In the future, I would:
 * Add description to flavors
 * Add authentication
 * Develop a 'shopping' feature with option for customers to add ice creams into their cart and 'checkout'.
+* Update CSS
 
 ## RESTful Route Table
 
